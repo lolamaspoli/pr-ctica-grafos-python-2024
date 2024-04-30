@@ -20,14 +20,16 @@ def lee_grafo_stdin(grafo):
     """
     num_vertices = int(grafo[0])
     vertices = []
-    for i in range (1 + num_vertices+1):
-        vertices.append(grafo(i))
+    for i in range(1, 1 + num_vertices):
+        vertices.append(grafo[i])
+
     aristas = []
-    for i in range (num_vertices+2 + len(grafo)):
+    for i in range(num_vertices + 1, len(grafo)):
         origen, destino = grafo[i].split()
         aristas.append((origen, destino))
 
     return (vertices, aristas)
+
 
 def lee_grafo_archivo(file_path):
     '''
@@ -90,10 +92,3 @@ def lee_entrada_2():
     
     print ('leidas {0} lineas').format(count)
 
-def main():
-    grafo = ['3', 'A', 'B', 'C', 'A B', 'B C', 'C B']
-    lee_grafo_stdin(grafo)
-    print (grafo)
-
-if __name__== '__main__' :
-    main()
